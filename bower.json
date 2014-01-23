@@ -1,0 +1,11 @@
+{
+  "name": "gaej-client",
+  "version": "0.0.0",
+  "dependencies": {
+    "riotjs": "~0.9.8",
+    "todc-bootstrap": "*",
+    "zepto-full": "~1.1.2"
+  },
+  "devDependencies": {
+  }
+}
