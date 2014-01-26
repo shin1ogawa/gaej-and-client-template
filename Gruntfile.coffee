@@ -20,7 +20,7 @@ module.exports = (grunt) ->
 					frameworks: ['mocha', 'chai-sinon']
 					files: ['target/zepto*.js', 'target/riot*.js', 'target/tests.js']
 					singleRun: true
-					reporters: ['progress', 'junit', 'html']
+					reporters: ['spec', 'progress', 'junit', 'html']
 					junitReporter: 
 						outputFile: 'target/karma-results.xml'
 					htmlReporter:
@@ -83,6 +83,11 @@ module.exports = (grunt) ->
 						dest: 'src/main/webapp/lib/js/'
 						cwd: 'bower_components/zepto-full/'
 						src: '*.min.js'
+					}, {
+						expand: true, dot: true
+						dest: 'src/main/webapp/'
+						cwd: 'target'
+						src: 'app.*'
 					}
 				]
 
@@ -120,7 +125,7 @@ module.exports = (grunt) ->
 					'src/main/coffee/{,*/}*.coffee'
 					'src/test/coffee/{,*/}*.coffee'
 				]
-				tasks: ['coffee', 'karma']
+				tasks: ['coffee', 'copy:test', 'karma']
 			less:
 				files: 'src/main/less/{,*/}*.less'
 				tasks: ['less']
@@ -135,5 +140,5 @@ module.exports = (grunt) ->
 	# grunt.loadNpmTasks 'grunt-contrib-commands'
 	# grunt.loadNpmTasks 'grunt-mocha-webdriver'
 
-	grunt.registerTask 'default', ['clean:output', 'coffee:dist', 'less', 'copy:dist']
+	grunt.registerTask 'default', ['clean:output', 'coffee', 'copy:test', 'karma', 'less', 'copy:dist']
 	grunt.registerTask 'test', ['coffee:test', 'copy:test', 'karma']
