@@ -6,7 +6,7 @@
 
 	<context-param>
 		<param-name>slim3.rootPackage</param-name>
-		<param-value>jp.co.topgate</param-value>
+		<param-value>com.shin1ogawa</param-value>
 	</context-param>
 	<context-param>
 		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>

@@ -212,7 +212,7 @@
             </goals>
             <configuration>
               <outputDirectory>${eclipse.lib}</outputDirectory>
-              <includeArtifactIds>slim3-gen-jsr269,jsonpullparser-apt</includeArtifactIds>
+              <includeArtifactIds>slim3-gen-jsr269</includeArtifactIds>
               <overWriteReleases>false</overWriteReleases>
               <overWriteSnapshots>true</overWriteSnapshots>
               <overWriteIfNewer>true</overWriteIfNewer>
@@ -290,7 +290,6 @@
                 <![CDATA[
 <factorypath>
   <factorypathentry kind="WKSPJAR" id="/${artifactId}/${eclipse.lib}/slim3-gen-jsr269-${slim3.version}.jar" enabled="true" runInBatchMode="false"/>
-  <factorypathentry kind="WKSPJAR" id="/${artifactId}/${eclipse.lib}/jsonpullparser-apt-${jsonpullparser.version}.jar" enabled="true" runInBatchMode="false"/>
 </factorypath>
                ]]>
               </content>
